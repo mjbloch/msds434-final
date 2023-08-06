@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MSDS434- Module 6</title>
+</head>
+<body>
+    <h1>MSDS434 - Module 6 - Matthew Bloch - Predicting Customer Churn</h1>
+    <form action="/predict" method="POST" id="form">
+        <p>Age (years)<input type="text" name="age" /></p>
+        <p>Gender
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </p>
+        <p>Tenure (years)<input type="text" name="tenure" /></p>
+        <p>Usage Frequency (#/mo)<input type="text" name="usage" /></p>
+        <p>Support Calls (#)<input type="text" name="support_calls" /></p>
+        <p>Payment Delay (#)<input type="text" name="pmt_delay" /></p>
+        <p>Subscription Type
+            <select id="sub_type" name="sub_type">
+                <option value="Basic">Basic</option>
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+            </select>
+        </p>
+        <p>Contract Length
+            <select id="contract_length" name="contract_length">
+                <option value="Monthly">Monthly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Annual">Annual</option>
+            </select>
+        </p>
+        <p>Total Spend ($)<input type="text" name="total_spend" /></p>
+        <p>Last Interaction (days)<input type="text" name="last_interaction" /></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>

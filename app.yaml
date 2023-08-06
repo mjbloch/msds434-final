@@ -1,0 +1,4 @@
+runtime: python311
+resources:
+  memory_gb: 1
+instance_class: F2
