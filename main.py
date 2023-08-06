@@ -6,13 +6,13 @@ import sys
 
 app = Flask(__name__, template_folder='./templates')
 
+# For local testing
 # credentials = "msds434-final-394319-6e3e1682d8d3.json"
 # client = bigquery.Client.from_service_account_json(credentials, project='msds434-final-394319')
+
+# for Cloud Run deployment
 client = bigquery.Client(project='msds434-final-394319')
 
-# app.secret_key = "super_secret_key"
-# app.config['BIGQUERY_PROJECT'] = 'msds434-final'
-# app.config['BIGQUERY_DATASET'] = 'churn'
 
 @app.route('/')
 def index():
