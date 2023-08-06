@@ -19,5 +19,5 @@ COPY . /app
 # Set the environment variable for Flask
 ENV FLASK_APP=main.py
 
-# During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "main:app"]
+# Start the application
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--timeout", "360", "main:app"]
