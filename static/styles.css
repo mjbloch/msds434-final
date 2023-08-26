@@ -1,0 +1,73 @@
+body {
+    background-color: rgb(16, 36, 66);
+    font-family: "Monaco", "Helvetica";
+}
+h1 {
+    color: rgb(240, 240, 240);
+}
+h2 {
+    color: rgb(240, 240, 240);
+}
+p.form-fields {
+    color: rgb(240, 240, 240);
+    font-size: 120%;
+    margin-left: 5%;
+}
+p.input-instructions {
+    color: rgb(255, 255, 255);
+    font-size: 160%;
+    text-align: center;
+    text-decoration: underline;
+}
+.dropdown {
+    background-color: white;
+    font-family: "Monaco", "Helvetica";
+    font-size: 100%;
+}
+.form-container {
+    background-color: rgb(40, 71, 117);
+    position: relative;
+    width: 60%;
+    border: 2px solid white;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+input[type=text] {
+    border: 2px solid grey;
+    background-color: white;
+    width: 93%;
+    padding: 2px;
+}
+
+input[type=submit] {
+    background-color: rgb(252, 208, 87);
+    padding: 8px 32px;
+    font-family: "Monaco", "Helvetica";
+    font-size: 100%;
+    text-decoration: bold;
+}
+
+select {
+    width: 200px;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 40%;
+    font-family: "Monaco", "Helvetica";
+    font-size: 100%;
+    ;
+}
+
+th, td {
+    border: 1px solid rgb(240, 240, 240);
+    padding: 8px;
+    text-align: center;
+    color: rgb(240, 240, 240);
+}

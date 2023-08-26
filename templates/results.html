@@ -2,26 +2,11 @@
 <html>
 <head>
     <title>BigQuery - Churn Prediction Results</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 50%;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <h1>BigQuery - Churn Predictions Results</h1>
-    <div>
+    <h1>Churn Prediction - Results</h1>
+    <div class="results">
         {{ html_table | safe }}
     </div>
 </body>

@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
+import google.auth
 from google.cloud import bigquery
+import logging
 import pandas as pd
 import sys
 
@@ -7,7 +9,7 @@ import sys
 app = Flask(__name__, template_folder='./templates')
 
 # For local testing
-# credentials = "msds434-final-394319-6e3e1682d8d3.json"
+# credentials = "msds434-final-394319-ddbe7efa91f8.json"
 # client = bigquery.Client.from_service_account_json(credentials, project='msds434-final-394319')
 
 # for Cloud Run deployment
@@ -78,11 +80,15 @@ def predict():
             write_disposition="WRITE_TRUNCATE",
         )
 
-        ingest = client.load_table_from_dataframe(
-            ingestion_df, 'msds434-final-394319.churn.churn_input', job_config=job_config
-        )
+        try:
+            ingest = client.load_table_from_dataframe(
+                ingestion_df, 'msds434-final-394319.churn.churn_input', job_config=job_config
+            )
 
-        ingest.result()
+            ingest.result()
+            logging.info("Churn model inputs loaded to BigQuery successfully")
+        except Exception as e:
+            logging.error("Error loading churn input data to BigQuery: ", e)
         
         query = """
                 SELECT * FROM 
@@ -91,7 +97,11 @@ def predict():
                 )
                 """
         
-        prediction_result_df = client.query(query).to_dataframe()
+        try:
+            prediction_result_df = client.query(query).to_dataframe()
+            logging.info("Predictions completed successfully")
+        except Exception as e:
+            logging.error("Error making model prediciton in BigQuery: ", e)
         
         temp = prediction_result_df.iloc[0][1]
         prob = dict(temp[1])['prob']

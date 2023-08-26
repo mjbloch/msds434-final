@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MSDS434- Module 6</title>
+    <title>MSDS434 - Final</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
 </head>
 <body>
-    <h1>MSDS434 - Module 6 - Matthew Bloch - Predicting Customer Churn</h1>
-    <p>TEST TEST - CI/CD Pipeline deployed these changes</p>
-    <form action="/predict" method="POST" id="form">
-        <p>Age (years)<input type="text" name="age" /></p>
-        <p>Gender
-            <select id="gender" name="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-        </p>
-        <p>Tenure (years)<input type="text" name="tenure" /></p>
-        <p>Usage Frequency (#/mo)<input type="text" name="usage" /></p>
-        <p>Support Calls (#)<input type="text" name="support_calls" /></p>
-        <p>Payment Delay (#)<input type="text" name="pmt_delay" /></p>
-        <p>Subscription Type
-            <select id="sub_type" name="sub_type">
-                <option value="Basic">Basic</option>
-                <option value="Standard">Standard</option>
-                <option value="Premium">Premium</option>
-            </select>
-        </p>
-        <p>Contract Length
-            <select id="contract_length" name="contract_length">
-                <option value="Monthly">Monthly</option>
-                <option value="Quarterly">Quarterly</option>
-                <option value="Annual">Annual</option>
-            </select>
-        </p>
-        <p>Total Spend ($)<input type="text" name="total_spend" /></p>
-        <p>Last Interaction (days)<input type="text" name="last_interaction" /></p>
-        <p><input type="submit" value="Submit" /></p>
-    </form>
+    <h1>Telecom Inc. - Predicting Customer Churn with AutoML</h1>
+    <h2>MSDS434 - Matthew Bloch</h2>
+    <div class="form-container">
+        <p class="input-instructions">Model Inputs - Please enter customer details for churn prediction</p>
+        <form action="/predict" method="POST" id="form">
+            <p class="form-fields">Gender</p>
+            <p class="form-fields">
+                <select class="dropdown" id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </p>
+            <p class="form-fields">Subscription Type</p>
+            <p class="form-fields">
+                <select class="dropdown" id="sub_type" name="sub_type">
+                    <option value="Basic">Basic</option>
+                    <option value="Standard">Standard</option>
+                    <option value="Premium">Premium</option>
+                </select>
+            </p>
+            <p class="form-fields">Contract Length</p>
+            <p class="form-fields">
+                <select class="dropdown" id="contract_length" name="contract_length">
+                    <option value="Monthly">Monthly</option>
+                    <option value="Quarterly">Quarterly</option>
+                    <option value="Annual">Annual</option>
+                </select>
+            </p>
+            <p class="form-fields">Age (years)<input type="text" name="age" /></p>
+            
+            <p class="form-fields">Tenure (years)<input type="text" name="tenure" /></p>
+            <p class="form-fields">Usage Frequency (#/mo)<input type="text" name="usage" /></p>
+            <p class="form-fields">Support Calls (#)<input type="text" name="support_calls" /></p>
+            <p class="form-fields">Payment Delay (#)<input type="text" name="pmt_delay" /></p>
+            
+            <p class="form-fields">Total Spend ($)<input type="text" name="total_spend" /></p>
+            <p class="form-fields">Last Interaction (days)<input type="text" name="last_interaction" /></p>
+            <p class="form-fields"><input type="submit" value="Submit" /></p>
+        </form>
+    </div>
 </body>
 </html>
