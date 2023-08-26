@@ -9,5 +9,10 @@
     <div class="results">
         {{ html_table | safe }}
     </div>
+    <div class="return-home">
+    <form action="{{ url_for('index') }}">
+        <button class="home-button" type="submit">Make Another Prediction</button>
+    </form>
+    </div>
 </body>
 </html>
