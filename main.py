@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request
-import google.auth
 from google.cloud import bigquery
 import logging
 import pandas as pd
-import sys
 
 
 app = Flask(__name__, template_folder='./templates')
