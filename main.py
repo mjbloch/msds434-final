@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from google.cloud import bigquery
+import google.cloud.logging
 import logging
 import pandas as pd
 
@@ -12,6 +13,9 @@ app = Flask(__name__, template_folder='./templates')
 
 # for Cloud Run deployment
 client = bigquery.Client(project='msds434-final-394319')
+
+logging_client = google.cloud.logging.Client()
+logging_client.setup_logging()
 
 
 @app.route('/')
