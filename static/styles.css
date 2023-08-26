@@ -71,3 +71,17 @@ th, td {
     text-align: center;
     color: rgb(240, 240, 240);
 }
+
+.return-home {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.home-button {
+    background-color: rgb(252, 208, 87);
+    padding: 8px 32px;
+    font-family: "Monaco", "Helvetica";
+    font-size: 100%;
+    text-decoration: bold;
+}
